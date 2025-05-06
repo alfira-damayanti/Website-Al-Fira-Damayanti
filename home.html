@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Teman Selera - Food Review Platform</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -39,9 +40,8 @@
       align-items: center;
       gap: 0.5rem;
       font-weight: bold;
-      font-size: 1.0rem;
+      font-size: 1rem;
     }
-
     header .logo img {
       width: 35px;
       height: 35px;
@@ -129,12 +129,17 @@
       color: #b42c24;
     }
     .category-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
+
     .cat-item {
       background: #cc312e;
       color: #fff;
@@ -232,6 +237,54 @@
       width: 40px;
       margin-bottom: 0.5rem;
     }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .category-list,
+      .dish-list {
+        flex-direction: column;
+        align-items: center;
+        animation: none; /* Hapus animasi di mobile */
+      }
+
+      .cat-item {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .dish-card {
+        width: 90%;
+        max-width: 300px;
+      }
+
+      .dish-card img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .search-bar input {
+        width: 180px;
+      }
+
+      .cat-item {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+      }
+
+      .dish-card p {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -239,9 +292,8 @@
 <!-- Header -->
 <header>
   <div class="logo">
-    <img src="images/logo tmn.png" alt="Teman Selera" 
-    style="width: 35px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
-  <span>Teman Selera</span>
+    <img src="images/logo tmn.png" alt="Teman Selera">
+    <span>Teman Selera</span>
   </div>
   <nav>
     <ul>
@@ -253,103 +305,185 @@
   </nav>
 </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Explore, Review, and <br> Enjoy Every Flavor!</h1>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search...">
-      <button><img src="images/search.png" alt="Search" style="width: 15px; height: 15px;"></button>
-      <button><img src="images/filters.png" alt="Settings" style="width: 15px; height: 15px;"></button>
-    </div>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <h1>Explore, Review, and <br> Enjoy Every Flavor!</h1>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button><img src="images/search.png" alt="Search" style="width: 15px; height: 15px;"></button>
+    <button><img src="images/filters.png" alt="Settings" style="width: 15px; height: 15px;"></button>
+  </div>
+</section>
 
-  <!-- About -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>Mengenal Teman Selera</p>
-    <div class="about-content">
-      <img src="images/logo.png" alt="Logo" style="width: 300px; border-radius: 12px;">
-      <div class="mission" style="max-width: 600px; text-align: left;">
-        <h3>Mission</h3>
-        <ol>
-          <li>Membantu pengguna menemukan pengalaman kuliner terbaik melalui review jujur dan rekomendasi terpercaya.</li>
-          <li>Menjadi panduan utama bagi food lovers dalam mengeksplorasi makanan enak dan restoran berkualitas.</li>
-          <li>Menghubungkan pecinta kuliner dengan tempat makan terbaik melalui ulasan, rating, dan rekomendasi berbasis komunitas.</li>
-          <li>Memberikan insight mendalam tentang makanan, restoran, dan tren kuliner terbaru.</li>
-          <li>Membangun komunitas pecinta kuliner yang berbagi pengalaman dan inspirasi melalui review dan artikel makanan.</li>
-        </ol>
-      </div>
+<!-- About -->
+<section class="about">
+  <h2>About Us</h2>
+  <p>Mengenal Teman Selera</p>
+  <div class="about-content">
+    <img src="images/logo.png" alt="Logo" style="width: 300px; border-radius: 12px;">
+    <div class="mission" style="max-width: 600px; text-align: left;">
+      <h3>Mission</h3>
+      <ol>
+        <li>Membantu pengguna menemukan pengalaman kuliner terbaik melalui review jujur dan rekomendasi terpercaya.</li>
+        <li>Menjadi panduan utama bagi food lovers dalam mengeksplorasi makanan enak dan restoran berkualitas.</li>
+        <li>Menghubungkan pecinta kuliner dengan tempat makan terbaik melalui ulasan, rating, dan rekomendasi berbasis komunitas.</li>
+        <li>Memberikan insight mendalam tentang makanan, restoran, dan tren kuliner terbaru.</li>
+        <li>Membangun komunitas pecinta kuliner yang berbagi pengalaman dan inspirasi melalui review dan artikel makanan.</li>
+      </ol>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Category -->
-  <section class="category">
-    <h2>Explore by Category</h2>
-    <p>Lengkap dari pembuka hingga penutup</p>
-    <div class="category-list">
-      <a href="explore.html#appetizer" class="cat-item">
-        <img src="images/sendok.png" alt="Appetizer" width="80"><br>Appetizer
-      </a>
-      <a href="explore.html#maincourse" class="cat-item">
-        <img src="images/sendok.png" alt="Main Course" width="80"><br>Main Course
-      </a>
-      <a href="explore.html#sidedish" class="cat-item">
-        <img src="images/sendok.png" alt="Side Dish" width="80"><br>Side Dish
-      </a>
-      <a href="explore.html#dessert" class="cat-item">
-        <img src="images/sendok.png" alt="Dessert" width="80"><br>Dessert
-      </a>
-    </div>
-  </section>
+<!-- Category -->
+<section class="category">
+  <h2>Explore by Category</h2>
+  <p>Lengkap dari pembuka hingga penutup</p>
+  <div class="category-list">
+    <a href="explore.html#appetizer" class="cat-item">
+      <img src="images/sendok.png" alt="Appetizer" width="80"><br>Appetizer
+    </a>
+    <a href="explore.html#maincourse" class="cat-item">
+      <img src="images/sendok.png" alt="Main Course" width="80"><br>Main Course
+    </a>
+    <a href="explore.html#sidedish" class="cat-item">
+      <img src="images/sendok.png" alt="Side Dish" width="80"><br>Side Dish
+    </a>
+    <a href="explore.html#dessert" class="cat-item">
+      <img src="images/sendok.png" alt="Dessert" width="80"><br>Dessert
+    </a>
+  </div>
+</section>
 
-  <!-- Dishes -->
-  <section class="dishes">
-    <h2>Most Loved Dishes</h2>
-    <p>Sajian terlaris dan terenak</p>
-    <div class="dish-list">
-      <div class="dish-card">
-        <img src="images/dimsum.png" alt="Dimsum">
-        <h3>Dimsum</h3>
-        <p>Start from <br>Rp. 2.500 - 35.000</p>
-        <p>⭐ 4.8</p>
-      </div>
-      <div class="dish-card">
-        <img src="images/lazuna.png" alt="Nasi Ayam Geprek">
-        <h3>Nasi Ayam Geprek</h3>
-        <p>Start from <br>Rp. 15.000 - 30.000</p>
-        <p>⭐ 4.8</p>
-      </div>
-      <div class="dish-card">
-        <img src="images/martbak.png" alt="Martabak Manis">
-        <h3>Martabak Manis</h3>
-        <p>Start from <br>Rp. 20.000 - 50.000</p>
-        <p>⭐ 4.8</p>
-      </div>
+<!-- Dishes -->
+<section class="dishes">
+  <h2>Most Loved Dishes</h2>
+  <p>Sajian terlaris dan terenak</p>
+  <div class="dish-list">
+    <div class="dish-card">
+      <img src="images/dimsum.png" alt="Dimsum">
+      <h3>Dimsum</h3>
+      <p>Start from <br>Rp. 2.500 - 35.000</p>
+      <p>⭐ 4.8</p>
     </div>
-    <button class="see-more">See more</button>
-  </section>
+    <div class="dish-card">
+      <img src="images/lazuna.png" alt="Nasi Ayam Geprek">
+      <h3>Nasi Ayam Geprek</h3>
+      <p>Start from <br>Rp. 15.000 - 30.000</p>
+      <p>⭐ 4.8</p>
+    </div>
+    <div class="dish-card">
+      <img src="images/martbak.png" alt="Martabak Manis">
+      <h3>Martabak Manis</h3>
+      <p>Start from <br>Rp. 20.000 - 50.000</p>
+      <p>⭐ 4.8</p>
+    </div>
+  </div>
+  <button class="see-more">See more</button>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="images/logo tmn.png" alt="Logo">
-        <p>© 2025 Teman Selera, Inc.<br>All rights reserved.</p>
-      </div>
-      <div class="footer-nav">
-        <h4>Navigation</h4>
-        <p>Home</p>
-        <p>Explore</p>
-        <p>Blog</p>
-        <p>Services</p>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>(+62) 852 1010 2323</p>
-        <p>temanselera@gmail.com</p>
-      </div>
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/logo tmn.png" alt="Logo">
+      <p>© 2025 Teman Selera, Inc.<br>All rights reserved.</p>
     </div>
-  </footer>
+    <div class="footer-nav">
+      <h4>Navigation</h4>
+      <p>Home</p>
+      <p>Explore</p>
+      <p>Blog</p>
+      <p>Services</p>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>(+62) 852 1010 2323</p>
+      <p>temanselera@gmail.com</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Tambahkan ini sebelum tag </body> -->
+<div id="categoryModal" style="
+  display: none; 
+  position: fixed; 
+  top: 0; left: 0; right:0; bottom:0; 
+  background: rgba(0,0,0,0.7); 
+  justify-content: center; 
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+">
+  <div style="background: #cc312e; padding: 2rem; border-radius: 12px; max-width: 90%; position: relative;">
+    <button onclick="closeModal()" style="
+      position: absolute; 
+      top: 10px; right: 10px; 
+      background: white; 
+      border: none; 
+      border-radius: 50%; 
+      width: 30px; 
+      height: 30px;
+      cursor: pointer;
+    ">✕</button>
+    <img id="modalImg" src="" alt="" style="width: 200px; border-radius: 12px; margin-bottom: 1rem;">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+<script>
+  // Data kategori
+  const categoryData = {
+    appetizer: {
+      title: "Appetizer",
+      img: "images/appetizer.jpg", // ganti dengan gambar appetizer
+      desc: "Appetizer adalah hidangan pembuka yang ringan, biasanya disajikan sebelum hidangan utama."
+    },
+    maincourse: {
+      title: "Main Course",
+      img: "images/maincourse.jpg", // ganti dengan gambar maincourse
+      desc: "Main Course adalah hidangan utama dalam sebuah sajian yang mengenyangkan dan menjadi pusat perhatian."
+    },
+    sidedish: {
+      title: "Side Dish",
+      img: "images/sidedish.jpg", // ganti dengan gambar sidedish
+      desc: "Side Dish adalah pelengkap makanan utama, bisa berupa sayuran, kentang, atau makanan ringan lainnya."
+    },
+    dessert: {
+      title: "Dessert",
+      img: "images/dessert.jpg", // ganti dengan gambar dessert
+      desc: "Dessert adalah makanan penutup yang manis, seperti kue, es krim, atau puding."
+    }
+  };
+
+  // Fungsi buka modal
+  function openModal(category) {
+    const data = categoryData[category];
+    if (data) {
+      document.getElementById('modalImg').src = data.img;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalDesc').innerText = data.desc;
+      document.getElementById('categoryModal').style.display = 'flex';
+    }
+  }
+
+  // Tutup modal
+  function closeModal() {
+    document.getElementById('categoryModal').style.display = 'none';
+  }
+
+  // Tambahkan event listener ke setiap kategori
+  document.querySelectorAll('.cat-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault(); // supaya link # tidak scroll
+      const href = this.getAttribute('href');
+      const category = href.split('#')[1];
+      openModal(category);
+    });
+  });
+</script>
 
 </body>
 </html>
