@@ -35,8 +35,18 @@
       height: 30px;
     }
     header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-weight: bold;
       font-size: 1.2rem;
+    }
+
+    header .logo img {
+      width: 35px;
+      height: 35px;
+      border-radius: 12px;
+      object-fit: cover;
     }
     header ul {
       list-style: none;
@@ -226,18 +236,19 @@
 </head>
 <body>
 
-<!-- header -->
+<!-- Header -->
 <header>
-  <div class="header-left">
-    <img src="images/logo tmn.png" alt="Teman Selera">
-    <div class="logo">Teman Selera</div>
+  <div class="logo">
+    <img src="images/logo tmn.png" alt="Teman Selera" 
+    style="width: 35px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+  <span>Teman Selera</span>
   </div>
   <nav>
-    <ul id="menu">
-      <li class="active"><a href="#">Home</a></li>
-      <li>Explore</li>
-      <li>Blog</li>
-      <li>Services</li>
+    <ul>
+      <li class="active"><a href="home.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="services.html">Services</a></li>
     </ul>
   </nav>
 </header>
@@ -339,18 +350,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Menu script -->
-  <script>
-    const menuLinks = document.querySelectorAll('#menu li');
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
 
 </body>
 </html>
