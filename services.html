@@ -244,7 +244,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Tambahan khusus placeholder jadi putih */
     input::placeholder,
     textarea::placeholder {
       color: white;
@@ -271,36 +270,90 @@
   <!-- Section 1 -->
   <div class="section-red">
     <h2>Services</h2>
-    <p style="font-family: Arial, sans-serif; font-size: 16px;">Bagikan Pengalaman Kuliner Favoritmu!</p>
-    <textarea placeholder="Tulis pengalamanmu di sini..."></textarea>
+    <p style="font-family: Arial, sans-serif; font-size: 16px; color: #ffffff;">Bagikan Pengalaman Kuliner Favoritmu!</p>
+    <textarea placeholder="Tulis pengalamanmu di sini..." style="color: #333; background-color: #f9f3e9;"></textarea>
     <br>
     <button class="yellow-btn">write a review</button>
   </div>
 
-  <!-- Section 2 -->
-  <div class="section-cream">
-    <h2>FAQ Section</h2>
+ <!-- Section 2 -->
+<div class="section-cream">
+  <h2>FAQ Section</h2>
 
-    <div class="faq-item">
-      <span>Bagaimana cara memberikan review di Teman Selera?</span>
-      <span class="arrow">▼</span>
+  <div class="faq-container" style="max-width:600px; margin:0 auto; text-align:left;">
+
+    <!-- FAQ 1 -->
+    <div class="faq-item-wrapper">
+      <input type="checkbox" id="faq1" hidden>
+      <label for="faq1" class="faq-item">
+        <span>Bagaimana cara memberikan review di Teman Selera?</span>
+        <span class="arrow">▼</span>
+      </label>
+      <div class="faq-answer">
+        Kamu dapat memberikan review dengan mengklik tombol "Write a Review" di halaman ini. Tulis pengalamanmu, lalu tekan submit!
+      </div>
     </div>
 
-    <div class="faq-item">
-      <span>Apakah saya perlu membuat akun untuk menulis review?</span>
-      <span class="arrow">▼</span>
+    <!-- FAQ 2 -->
+    <div class="faq-item-wrapper">
+      <input type="checkbox" id="faq2" hidden>
+      <label for="faq2" class="faq-item">
+        <span>Apakah saya perlu membuat akun untuk menulis review?</span>
+        <span class="arrow">▼</span>
+      </label>
+      <div class="faq-answer">
+        Tidak perlu! Kamu bisa langsung menulis review tanpa akun. Tapi, jika ingin menikmati fitur tambahan, kami sarankan untuk registrasi gratis.
+      </div>
     </div>
 
-    <div class="faq-item">
-      <span>Bagaimana cara melihat rekomendasi makanan terdekat?</span>
-      <span class="arrow">▼</span>
+    <!-- FAQ 3 -->
+    <div class="faq-item-wrapper">
+      <input type="checkbox" id="faq3" hidden>
+      <label for="faq3" class="faq-item">
+        <span>Bagaimana cara melihat rekomendasi makanan terdekat?</span>
+        <span class="arrow">▼</span>
+      </label>
+      <div class="faq-answer">
+        Aktifkan lokasi di browsermu, lalu kunjungi halaman Explore. Sistem kami akan menampilkan rekomendasi kuliner di sekitar lokasimu.
+      </div>
     </div>
 
-    <div class="faq-item">
-      <span>Apakah Teman Selera memiliki fitur pemesanan makanan?</span>
-      <span class="arrow">▼</span>
+    <!-- FAQ Section -->
+    <div class="faq-item-wrapper">
+      <input type="checkbox" id="faq4" hidden>
+      <label for="faq4" class="faq-item">
+        <span>Apakah Teman Selera memiliki fitur pemesanan makanan?</span>
+        <span class="arrow">▼</span>
+      </label>
+      <div class="faq-answer">
+        Saat ini, Teman Selera berfokus pada review dan rekomendasi. Namun, kami sedang menjajaki fitur pemesanan untuk masa mendatang!
+      </div>
     </div>
+
   </div>
+</div>
+
+<style>
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 14px;
+    color: #555;
+    padding: 0 1rem;
+  }
+
+  input:checked + label + .faq-answer {
+    max-height: 200px;
+    margin-top: 0.5rem;
+  }
+
+  /* Rotate arrow */
+  input:checked + label .arrow {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+</style>
 
   <!-- Section 3 -->
   <div class="section-red collaborate">
