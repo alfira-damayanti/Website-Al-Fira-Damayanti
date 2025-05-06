@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teman Selera - Explore</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+
+    header {
+      background: #fef9f6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: #cc312e;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: #cc312e;
+    }
+
+    nav li.active a {
+      color: #cc312e;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .red-section {
+      background: #cc312e;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cream-section {
+      background: #fef9f6;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .explore h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .location {
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.7rem;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .location input {
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      width: 200px;
+    }
+
+    .location button {
+      background: white;
+      color: #cc312e;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .daftar-resto {
+      font-size: 1rem;
+      color: white;
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .explore-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      color: black;
+      padding: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .explore-item img {
+      width: 100px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .menu-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .menu-item img {
+      width: 100px;
+    }
+
+    .menu-item {
+      cursor: pointer;
+    }
+
+    .see-more {
+      margin-top: 2rem;
+      background: #ffc107;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .restaurant-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .restaurant-item img {
+      width: 200px;
+      border-radius: 12px;
+    }
+
+    .restaurant-item {
+      max-width: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .testimonial-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-item {
+      background: white;
+      color: black;
+      padding: 1rem;
+      border-radius: 12px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-item img {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    footer {
+      background: #ffffff;
+      padding: 2rem 1rem;
+      font-size: 15px;
+      color: black;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-logo,
+    .footer-nav,
+    .footer-contact {
+      margin: 1rem;
+    }
+
+    .footer-nav h4,
+    .footer-contact h4 {
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo img {
+      width: 40px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Header -->
+ <header>
+  <div class="logo">
+      <img src="images/logo tmn.png" alt="Teman Selera" 
+      style="width: 35px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+    <span>Teman Selera</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="active"><a href="#">Explore</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Services</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Explore Section -->
+  <section class="explore red-section">
+    <h1>Explore</h1>
+    <div class="location">
+      <div>
+        <span>📍</span>
+        <input type="text" value="Jl. Daeng Tata Raya" />
+      </div>
+      <div class="daftar-resto" onclick="alert('Daftar resto clicked!')">Daftar Resto Terdekat ➔</div>
+    </div>
+
+    <div class="explore-grid">
+      <div class="explore-item" onclick="alert('Mie Mangko clicked!')">
+        <img src="images/mie mangko.png" alt="Mie Mangko" />
+        <div>
+          <h3>Mie mangko - Parang Tambung</h3>
+          <p>⭐ 4.7<br/>Mulai dari 15 menit</p>
+        </div>
+      </div>
+      <div class="explore-item" onclick="alert('Masterbul clicked!')">
+        <img src="images/masterbul.png" alt="Masterbul" />
+        <div>
+          <h3>Masterbul - Dg. Tata</h3>
+          <p>⭐ 4.7<br/>Mulai dari 15 menit</p>
+        </div>
+      </div>
+      <div class="explore-item" onclick="alert('Lazuna Chicken clicked!')">
+        <img src="images/lazuna.png" alt="Lazuna Chicken" />
+        <div>
+          <h3>Lazuna Chicken - Dg. Tata</h3>
+          <p>⭐ 4.8<br/>Mulai dari 15 menit</p>
+        </div>
+      </div>
+      <div class="explore-item" onclick="alert('Kaku Food clicked!')">
+        <img src="images/kaku food.png" alt="Kaku Food" />
+        <div>
+          <h3>Kaku Food - Dg. Tata</h3>
+          <p>⭐ 4.9<br/>Mulai dari 15 menit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Menu -->
+  <section class="cream-section menu">
+    <h2>Our Menu</h2>
+    <p>Pilihan menu lezat untuk semua selera</p>
+    <div class="menu-list">
+      <div class="menu-item" onclick="alert('Soup clicked!')">
+        <img src="images/soup.png" alt="Soup" style="width: 200px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;" />
+        <p>Soup</p>
+      </div>
+      <div class="menu-item" onclick="alert('Fried Rice clicked!')">
+        <img src="images/friedrive.png" alt="Fried Rice" style="width: 200px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;" />
+        <p>Fried Rice</p>
+      </div>
+      <div class="menu-item" onclick="alert('French Fries clicked!')">
+        <img src="images/french.png" alt="French Fries" style="width: 200px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;" />
+        <p>French Fries</p>
+      </div>
+      <div class="menu-item" onclick="alert('Cake clicked!')">
+        <img src="images/cake.png" alt="Cake" style="width: 200px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;" />
+        <p>Cake</p>
+      </div>
+    </div>
+    <button class="see-more" onclick="alert('See more clicked!')">See more</button>
+  </section>
+
+ <!-- Top Rated Restaurants -->
+<section class="red-section restaurants">
+  <h2>Top Rated Restaurants</h2>
+  <p>Contoh restoran terbaik di Makassar</p>
+  <div class="restaurant-list">
+    <div class="restaurant-item">
+      <a href="https://www.instagram.com/verda.dining?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==/" target="_blank">
+        <img src="images/verda.jpg" alt="Verda Dining" />
+      </a>
+      <h3>Verda Dining</h3>
+      <p>Contemporary Cuisine<br/>Open Mon - Sunday</p>
+      <small>11.00 - 23.00</small>
+    </div>
+    <div class="restaurant-item">
+      <a href="https://www.instagram.com/panbakers/" target="_blank">
+        <img src="images/panbakers.jpg" alt="Panbakers" />
+      </a>
+      <h3>Panbakers</h3>
+      <p>Casual Dining<br/>Open Mon - Sunday</p>
+      <small>10.00 - 23.30</small>
+    </div>
+    <div class="restaurant-item">
+      <a href="https://www.instagram.com/goodfields.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==/" target="_blank">
+        <img src="images/goodfields.png" alt="Goodfields" />
+      </a>
+      <h3>Goodfields</h3>
+      <p>Cafe & Resto<br/>Open Mon - Sunday</p>
+      <small>10.00 - 22.00</small>
+    </div>
+  </div>
+</section>
+
+  <!-- Testimonials -->
+  <section class="cream-section testimonials">
+    <h2>What People Say?</h2>
+    <p>Lihat ulasan dan rating dari pengguna untuk pengalaman terbaik!</p>
+    <div class="testimonial-list">
+      <div class="testimonial-item">
+        <h3>Annisa</h3>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>Restoran terbaik dengan cita rasa luar biasa! Makanan selalu fresh, pelayanan ramah, dan suasana nyaman.</p>
+      </div>
+      <div class="testimonial-item">
+        <h3>Andi</h3>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>Suasana cozy, staff ramah, dan makanan benar-benar menggugah selera!</p>
+      </div>
+      <div class="testimonial-item">
+        <h3>Aulia</h3>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>Makanannya enak banget! Rasanya autentik, porsinya pas, dan pelayanannya cepat.</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer -->
+   <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo tmn.png" alt="Logo" width="45">
+        <p>© 2025 Teman Selera, Inc.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <p>Home</p>
+        <p>Explore</p>
+        <p>Blog</p>
+        <p>Services</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>(+62) 852 1010 2323</p>
+        <p>temanselera@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+<!-- Menu script -->
+<script>
+  const menuLinks = document.querySelectorAll('#menu li');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
