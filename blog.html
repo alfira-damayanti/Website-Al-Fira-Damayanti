@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -6,304 +7,300 @@
   <title>Teman Selera - Blog</title>
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       background: #f7f0e6;
       color: #333;
     }
+header {
+  background: #cc312e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
 
-    header {
-      background: #cc312e;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: bold;
-      color: white;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      padding: 0;
-      margin: 0;
-    }
+nav li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
 
-    nav li a {
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-    }
+nav li.active a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: bold;
+}
 
-    nav li.active a {
-      color: #ffffff;
-      text-decoration: underline;
-      font-weight: bold;
-    }
+h1 {
+  font-size: 32px;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  color: #cc312e;
+}
 
-    h1 {
-      font-size: 32px;
-      margin: 0 0 1rem 0;
-      text-align: center;
-      color: #cc312e;
-    }
+h2 {
+  font-size: 20px;
+  margin: 2rem 0 1rem 0;
+  color: #000000;
+}
 
-    h2 {
-      font-size: 20px;
-      margin: 2rem 0 1rem 0;
-      color: #000000;
-    }
+.cream-section {
+  background: #fef9f6;
+  padding: 2rem;
+}
 
-    .cream-section {
-      background: #fef9f6;
-      padding: 2rem;
-    }
+.red-section {
+  background: #cc312e;
+  color: white;
+  padding: 2rem;
+}
 
-    .red-section {
-      background: #cc312e;
-      color: white;
-      padding: 2rem;
-    }
+.featured-articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-    .featured-articles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+.article-item {
+  flex: 1 1 300px;
+  max-width: 340px;
+}
 
-    .article-item {
-      flex: 1 1 300px;
-      max-width: 340px;
-    }
+.article-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-    .article-item img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.article-item h3 {
+  font-size: 16px;
+  margin-top: 0.5rem;
+  color: black;
+  font-weight: bold;
+}
 
-    .article-item h3 {
-      font-size: 16px;
-      margin-top: 0.5rem;
-      color: black;
-      font-weight: bold;
-    }
+.article-item p {
+  font-size: 13px;
+  color: black;
+}
 
-    .article-item p {
-      font-size: 13px;
-      color: black;
-    }
+.blog-categories p {
+  margin-top: 0.5rem;
+  color: white;
+  text-align: center;
+}
 
-    .blog-categories p {
-      margin-top: 0.5rem;
-      color: white;
-      text-align: center;
-    }
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-    .category-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+.category-item {
+  max-width: 220px;
+  text-align: center;
+}
 
-    .category-item {
-      max-width: 220px;
-      text-align: center;
-    }
+.category-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-    .category-item img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.category-item button {
+  margin-top: 0.5rem;
+  background: #ffc107;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
 
-    .category-item button {
-      margin-top: 0.5rem;
-      background: #ffc107;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 13px;
-    }
+.trending-now ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .trending-now ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 1rem;
-      text-align: left;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.trending-now li {
+  font-size: 14px;
+  margin: 0.5rem 0;
+}
 
-    .trending-now li {
-      font-size: 14px;
-      margin: 0.5rem 0;
-    }
+.trending-now a {
+  color: #cc312e;
+  font-weight: bold;
+  text-decoration: underline;
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 16px;
+}
 
-    .trending-now a {
-      color: #cc312e;
-      font-weight: bold;
-      text-decoration: underline;
-      display: block;
-      margin: 1rem auto;
-      text-align: center;
-      font-size: 16px;
-    }
+.culinary-stories img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
 
-    .culinary-stories img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      margin-top: 1rem;
-      border-radius: 10px;
-    }
+footer {
+  background: #fef9f6;
+  padding: 2rem 1rem;
+  font-size: 15px;
+  color: black;
+}
 
-    footer {
-      background: #ffffff;
-      padding: 2rem 1rem;
-      font-size: 15px;
-      color: black;
-    }
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+.footer-logo, .footer-nav, .footer-contact {
+  margin: 1rem;
+}
 
-    .footer-logo, .footer-nav, .footer-contact {
-      margin: 1rem;
-    }
+.footer-nav h4, .footer-contact h4 {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
 
-    .footer-nav h4, .footer-contact h4 {
-      font-size: 14px;
-      margin-bottom: 0.5rem;
-    }
+.footer-logo img {
+  width: 40px;
+  margin-bottom: 0.5rem;
+}
 
-    .footer-logo img {
-      width: 40px;
-      margin-bottom: 0.5rem;
-    }
+.badge {
+  background: #ffc107;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: black;
+  display: inline-block;
+}
 
-    .badge {
-      background: #ffc107;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      color: black;
-      display: inline-block;
-    }
-
-    @media (max-width: 768px) {
-      .featured-articles, .category-list, .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
+@media (max-width: 768px) {
+  .featured-articles, .category-list, .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
   </style>
 </head>
 <body>
-  
- <!-- Header -->
- <header>
-  <div class="logo">
-      <img src="images/logo tmn.png" alt="Teman Selera" 
-      style="width: 35px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
-    <span>Teman Selera</span>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Explore</a></li>
-      <li class="active"><a href="#">Blog</a></li>
-      <li><a href="#">Services</a></li>
-    </ul>
-  </nav>
-</header>
 
-  <!-- Featured Articles -->
-  <h2>Featured Articles</h2>
-  <div class="featured-articles">
-    <div class="article-item">
-      <a href="https://www.kompasiana.com/tesalonika47581/67d3e12cc925c454ab107d52/etika-reviewer-kuliner-jujur-dalam-ulasan-santun-dalam-kata">
-        <img src="images/blog 1.jpg" alt="Blog 1">
-        <h3>Ulasan itu Penting, Tapi Jangan Lupakan Bumbu Empatinya</h3>
-      </a>
-      <p>Sebagai seorang food vlogger, saya pernah mendapatkan pertanyaan, "Gimana sih caranya ngasih ulasan yang jujur, tapi nggak bikin pelaku usaha jadi ciut nyali?"</p>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+        <img src="images/logo tmn.png" alt="Teman Selera" 
+        style="width: 35px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+      <span>Teman Selera</span>
     </div>
-    <div class="article-item">
-      <a href="https://www.kompasiana.com/yustisia.kristiana/67d27725c925c4515d5bcfe4/laksa-tangerang-gurih-harum-dan-menggoda-selera">
-        <img src="images/blog 2.jpg" alt="Blog 2">
-        <h3>Laksa Tangerang: Gurih, Harum, dan Menggoda Selera!</h3>
-      </a>
-      <p>Di antara berbagai varian laksa di Indonesia, Laksa Tangerang menjadi salah satu yang unik dan wajib dicoba. Kenikmatan hidangan ini tidak hanya berasal dari cita rasanya yang khas, tetapi juga dari beragam jenisnya</p>
-    </div>
-    <div class="article-item">
-      <a href="https://www.kompasiana.com/riniwulandari0658/67d19547c925c4523f061472/serunya-menu-tunjuk-ala-auntie-hangatkan-berbuka-dan-sahur-sehat-ramadan">
-        <img src="images/blog 3.jpg" alt="Blog 3">
-        <h3>"Menu Tunjuk" ala Auntie: Sajian Spesial Hangatkan Berbuka dan Sahur Ramadan</h3>
-      </a>
-      <p>Momen ramadan yang spesial untuk beribadah puasa seharian normalnya ya harus ditebus dengan menyediakan menu berbuka dan bersahur yang setidaknya selain sehat dan bergizi memenuhi kebutuhan asupan yang baik tetap harus menarik selera.</p>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li class="active"><a href="blog.html">Blog</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Blog Header -->
+<section class="cream-section">
+    <h1>Blogs and articles</h1>
+
+<!-- Featured Articles -->
+<h2>Featured Articles</h2>
+<div class="featured-articles">
+  <div class="article-item">
+    <img src="images/blog 1.jpg" alt="Blog 1">
+    <h3>Ulasan itu Penting, Tapi Jangan Lupakan Bumbu Empatinya</h3>
+    <p>Sebagai seorang food vlogger, saya pernah mendapatkan pertanyaan, "Gimana sih caranya ngasih ulasan yang jujur, tapi nggak bikin pelaku usaha jadi ciut nyali?"</p>
   </div>
-</section>
+  <div class="article-item">
+    <img src="images/blog 2.jpg" alt="Blog 2">
+    <h3>Laksa Tangerang: Gurih, Harum, dan Menggoda Selera!</h3>
+    <p>Di antara berbagai varian laksa di Indonesia, Laksa Tangerang menjadi salah satu yang unik dan wajib dicoba. Kenikmatan hidangan ini tidak hanya berasal dari cita rasanya yang khas, tetapi juga dari beragam jenisnya</p>
+  </div>
+  <div class="article-item">
+    <img src="images/blog 3.jpg" alt="Blog 3">
+    <h3>"Menu Tunjuk" ala Auntie: Sajian Spesial Hangatkan Berbuka dan Sahur Ramadan</h3>
+    <p>Momen ramadan yang spesial untuk beribadah puasa seharian normalnya ya harus ditebus dengan menyediakan menu berbuka dan bersahur yang setidaknya selain sehat dan bergizi memenuhi kebutuhan asupan yang baik tetap harus menarik selera.</p>
+  </div>
+</div>
+  </section>
 
   <!-- Blog Categories -->
   <section class="red-section blog-categories">
     <h2 style="text-align: center; color: white;">Blog Categories</h2>
     <p>Jelajahi berbagai kategori blog kuliner di bawah ini!</p>
-
-    <div class="category-list">
-      <div class="category-item">
-        <img src="images/resep.png" alt="Resep & Tips Memasak" 
-        style="width: 230px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
-        <button>Resep & Tips Memasak</button>
-      </div>
-      <div class="category-item">
-        <img src="images/review resto.png" alt="Review Restaurant" 
-        style="width: 230px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
-        <button>Review Restaurant</button>
-      </div>
-      <div class="category-item">
-        <img src="images/event kuliner.png" alt="Event Kuliner" 
-        style="width: 250px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
-        <button>Event Kuliner</button>
-      </div>
-    </div>
+<div class="category-list">
+  <div class="category-item">
+    <img src="images/resep.png" alt="Resep & Tips Memasak" 
+    style="width: 230px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+    <button>Resep & Tips Memasak</button>
+  </div>
+  <div class="category-item">
+    <img src="images/review resto.png" alt="Review Restaurant" 
+    style="width: 230px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+    <button>Review Restaurant</button>
+  </div>
+  <div class="category-item">
+    <img src="images/event kuliner.png" alt="Event Kuliner" 
+    style="width: 250px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+    <button>Event Kuliner</button>
+  </div>
+</div>
   </section>
 
   <!-- Trending Now -->
   <section class="cream-section trending-now">
     <h2 style="text-align: center;">Trending Now</h2>
 
-    <a href="#">5 Tren Makanan yang Diprediksi Bakal Populer Tahun 2025</a>
+<a href="#">5 Tren Makanan yang Diprediksi Bakal Populer Tahun 2025</a>
 
-    <ul>
-      <li><strong>1.</strong> Pengalaman santap canggih</li>
-      <li><strong>2.</strong> Hibachi</li>
-      <li><strong>3.</strong> Makanan manis Khas Asia</li>
-      <li><strong>4.</strong> Dessert</li>
-      <li><strong>5.</strong> Protein Nabati</li>
-    </ul>
+<ul>
+  <li><strong>1.</strong> Pengalaman santap canggih</li>
+  <li><strong>2.</strong> Hibachi</li>
+  <li><strong>3.</strong> Makanan manis Khas Asia</li>
+  <li><strong>4.</strong> Dessert</li>
+  <li><strong>5.</strong> Protein Nabati</li>
+</ul>
   </section>
 
   <!-- Culinary Stories -->
