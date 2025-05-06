@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teman Selera - Food Review Platform</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f0e6;
+      color: #cc312e;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      margin: 0.5rem 0;
+    }
+    header {
+      background: #cc312e;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      align-items: center;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .header-left img {
+      width: 30px;
+      height: 30px;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    header li {
+      cursor: pointer;
+    }
+    header li a {
+      color: white;
+      text-decoration: none;
+    }
+    header li a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+    header li.active a {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: #f7f0e6;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .search-bar {
+      margin-top: 2rem;
+    }
+    .search-bar input {
+      padding: 0.5rem;
+      width: 250px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    .search-bar button {
+      padding: 0.5rem;
+      border: none;
+      background: #cc312e;
+      cursor: pointer;
+    }
+
+    .about {
+      background: #cc312e;
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .about h2, .about p, .about .mission h3, .about .mission ol {
+      color: #fff;
+    }
+    .about-content {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .about-content img {
+      width: 250px;
+      height: auto;
+    }
+
+    .category {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #f7f0e6;
+    }
+    .category h2, .category p {
+      color: #b42c24;
+    }
+    .category-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .cat-item {
+      background: #cc312e;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      text-decoration: none;
+    }
+    .cat-item:hover {
+      transform: scale(1.1);
+    }
+
+    .dishes {
+      background: #cc312e;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .dish-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .dish-card {
+      background: #fff;
+      color: #333;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .dish-card:hover {
+      transform: scale(1.05);
+    }
+    .dish-card h3 {
+      color: #b42c24;
+      margin: 0.5rem 0;
+    }
+    .dish-card img {
+      width: 100px;
+      height: 100px;
+    }
+    .dish-card p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      color: #000;
+    }
+    .see-more {
+      margin-top: 2rem;
+      background: #ffc107;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    .see-more:hover {
+      background: #e6b006;
+    }
+
+    footer {
+      background: #ffffff;
+      padding: 2rem 1rem;
+      font-size: 15px;
+      color: black;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .footer-logo, .footer-nav, .footer-contact {
+      margin: 1rem;
+    }
+    .footer-nav h4, .footer-contact h4 {
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo img {
+      width: 40px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- header -->
+<header>
+  <div class="header-left">
+    <img src="images/logo tmn.png" alt="Teman Selera">
+    <div class="logo">Teman Selera</div>
+  </div>
+  <nav>
+    <ul id="menu">
+      <li class="active"><a href="#">Home</a></li>
+      <li>Explore</li>
+      <li>Blog</li>
+      <li>Services</li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Explore, Review, and <br> Enjoy Every Flavor!</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button><img src="images/search.png" alt="Search" style="width: 15px; height: 15px;"></button>
+      <button><img src="images/filters.png" alt="Settings" style="width: 15px; height: 15px;"></button>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>Mengenal Teman Selera</p>
+    <div class="about-content">
+      <img src="images/logo.png" alt="Logo" style="width: 300px; border-radius: 12px;">
+      <div class="mission" style="max-width: 600px; text-align: left;">
+        <h3>Mission</h3>
+        <ol>
+          <li>Membantu pengguna menemukan pengalaman kuliner terbaik melalui review jujur dan rekomendasi terpercaya.</li>
+          <li>Menjadi panduan utama bagi food lovers dalam mengeksplorasi makanan enak dan restoran berkualitas.</li>
+          <li>Menghubungkan pecinta kuliner dengan tempat makan terbaik melalui ulasan, rating, dan rekomendasi berbasis komunitas.</li>
+          <li>Memberikan insight mendalam tentang makanan, restoran, dan tren kuliner terbaru.</li>
+          <li>Membangun komunitas pecinta kuliner yang berbagi pengalaman dan inspirasi melalui review dan artikel makanan.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category -->
+  <section class="category">
+    <h2>Explore by Category</h2>
+    <p>Lengkap dari pembuka hingga penutup</p>
+    <div class="category-list">
+      <a href="explore.html#appetizer" class="cat-item">
+        <img src="images/sendok.png" alt="Appetizer" width="80"><br>Appetizer
+      </a>
+      <a href="explore.html#maincourse" class="cat-item">
+        <img src="images/sendok.png" alt="Main Course" width="80"><br>Main Course
+      </a>
+      <a href="explore.html#sidedish" class="cat-item">
+        <img src="images/sendok.png" alt="Side Dish" width="80"><br>Side Dish
+      </a>
+      <a href="explore.html#dessert" class="cat-item">
+        <img src="images/sendok.png" alt="Dessert" width="80"><br>Dessert
+      </a>
+    </div>
+  </section>
+
+  <!-- Dishes -->
+  <section class="dishes">
+    <h2>Most Loved Dishes</h2>
+    <p>Sajian terlaris dan terenak</p>
+    <div class="dish-list">
+      <div class="dish-card">
+        <img src="images/dimsum.png" alt="Dimsum">
+        <h3>Dimsum</h3>
+        <p>Start from <br>Rp. 2.500 - 35.000</p>
+        <p>⭐ 4.8</p>
+      </div>
+      <div class="dish-card">
+        <img src="images/lazuna.png" alt="Nasi Ayam Geprek">
+        <h3>Nasi Ayam Geprek</h3>
+        <p>Start from <br>Rp. 15.000 - 30.000</p>
+        <p>⭐ 4.8</p>
+      </div>
+      <div class="dish-card">
+        <img src="images/martbak.png" alt="Martabak Manis">
+        <h3>Martabak Manis</h3>
+        <p>Start from <br>Rp. 20.000 - 50.000</p>
+        <p>⭐ 4.8</p>
+      </div>
+    </div>
+    <button class="see-more">See more</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo tmn.png" alt="Logo">
+        <p>© 2025 Teman Selera, Inc.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <p>Home</p>
+        <p>Explore</p>
+        <p>Blog</p>
+        <p>Services</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>(+62) 852 1010 2323</p>
+        <p>temanselera@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Menu script -->
+  <script>
+    const menuLinks = document.querySelectorAll('#menu li');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
