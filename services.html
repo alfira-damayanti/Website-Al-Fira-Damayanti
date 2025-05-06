@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teman Selera - Explore</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+
+    header {
+      background: #fef9f6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: #cc312e;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #cc312e;
+      margin: 0 0.5rem;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-family: 'Georgia', serif;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 28px;
+      color: #cc312e;
+    }
+
+    .section-red h2 {
+      color: white;
+    }
+
+    .section-red {
+      background: #cc312e;
+      padding: 3rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    .section-red textarea {
+      width: 80%;
+      max-width: 500px;
+      height: 150px;
+      border-radius: 10px;
+      border: none;
+      margin: 1rem 0;
+      padding: 1rem;
+      font-size: 14px;
+      background: #f9f3e9;
+    }
+
+    .yellow-btn {
+      background: #ffc107;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: 'Georgia', serif;
+    }
+
+    .section-cream {
+      background: #f9f3e9;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      max-width: 600px;
+      margin: 1rem auto;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .faq-item:hover {
+      background: #f0e8dc;
+    }
+
+    .arrow {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .section-red.collaborate {
+      padding: 4rem 1rem;
+    }
+
+    .collaborate p {
+      max-width: 600px;
+      margin: 1rem auto;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    .contact-options {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-options div {
+      text-align: center;
+      color: black;
+    }
+
+    .contact-options img {
+      width: 50px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    /* Section 4 - Form */
+    .section-cream.form-section {
+      padding: 3rem 1rem;
+    }
+
+    .form-container {
+      background: #cc312e;
+      border-radius: 15px;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      color: white;
+      align-items: flex-start;
+    }
+
+    .form-left {
+      flex: 0 0 55%;
+      max-width: 55%;
+    }
+
+    .form-left label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-left input,
+    .form-left textarea,
+    .form-left select {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      font-family: Arial, sans-serif;
+      background: #cc312e;
+      border: 1px solid white;
+      color: white;
+    }
+
+    .form-left button {
+      background: #ffc107;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: 'Georgia', serif;
+      color: black;
+      margin-top: 1rem;
+    }
+
+    .form-right {
+      flex: 0 0 40%;
+      max-width: 40%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-top: 1rem;
+    }
+
+    .form-right img {
+      width: 80%;
+      max-width: 250px;
+    }
+
+    footer {
+      background: #ffffff;
+      padding: 2rem 1rem;
+      font-size: 15px;
+      color: black;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-logo, .footer-nav, .footer-contact {
+      margin: 1rem;
+    }
+
+    .footer-nav h4, .footer-contact h4 {
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo img {
+      width: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Tambahan khusus placeholder jadi putih */
+    input::placeholder,
+    textarea::placeholder {
+      color: white;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo tmn.png" alt="Teman Selera" width="30">
+      <span>Teman Selera</span>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Blog</a>
+      <a href="#" class="active">Services</a>
+    </nav>
+  </header>
+
+  <!-- Section 1 -->
+  <div class="section-red">
+    <h2>Services</h2>
+    <p style="font-family: Arial, sans-serif; font-size: 16px;">Bagikan Pengalaman Kuliner Favoritmu!</p>
+    <textarea placeholder="Tulis pengalamanmu di sini..."></textarea>
+    <br>
+    <button class="yellow-btn">write a review</button>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section-cream">
+    <h2>FAQ Section</h2>
+
+    <div class="faq-item">
+      <span>Bagaimana cara memberikan review di Teman Selera?</span>
+      <span class="arrow">▼</span>
+    </div>
+
+    <div class="faq-item">
+      <span>Apakah saya perlu membuat akun untuk menulis review?</span>
+      <span class="arrow">▼</span>
+    </div>
+
+    <div class="faq-item">
+      <span>Bagaimana cara melihat rekomendasi makanan terdekat?</span>
+      <span class="arrow">▼</span>
+    </div>
+
+    <div class="faq-item">
+      <span>Apakah Teman Selera memiliki fitur pemesanan makanan?</span>
+      <span class="arrow">▼</span>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section-red collaborate">
+    <h2 style="color: white;">Collaborate With Us</h2>
+    <p>Berkolaborasi dengan Teman Selera! Jadilah mitra kami untuk promosi restoran, produk makanan, atau kerja sama media. Hubungi kami untuk peluang kolaborasi lebih lanjut.</p>
+    <div class="contact-options">
+
+      <!-- WhatsApp -->
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div>
+          <img src="images/logo wa.png" alt="Whatsapp" style="width: 60px; height: 70px; object-fit: contain;">
+        </div>
+        <div style="color: white; text-align: left;">
+          <strong>Send Us on Whatsapp</strong><br>
+          <span style="display: block; margin-top: 0.2rem;">(+62) 852 1010 2323</span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div>
+          <img src="images/logo email.png" alt="Email" style="width: 60px; height: 70px; object-fit: contain;">
+        </div>
+        <div style="color: white; text-align: left;">
+          <strong>Send Us an Email</strong><br>
+          <span style="display: block; margin-top: 0.2rem;">temanselera@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section-cream form-section">
+    <h2>Drop Us a Message For Any Query</h2>
+
+    <div class="form-container">
+      <!-- Form kiri -->
+      <div class="form-left">
+        <div style="display: flex; gap: 1rem;">
+          <div style="flex:1;">
+            <label>First Name</label>
+            <input type="text" placeholder="Ex. Muh">
+          </div>
+          <div style="flex:1;">
+            <label>Last Name</label>
+            <input type="text" placeholder="Ex. Rafli">
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+          <div style="flex:1;">
+            <label>Email Address</label>
+            <input type="email" placeholder="example@gmail.com">
+          </div>
+          <div style="flex:1;">
+            <label>Subject</label>
+            <select>
+              <option>How can we help?</option>
+              <option>Collaboration</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <label>Comments / Questions</label>
+          <textarea rows="4" placeholder="Your message..."></textarea>
+        </div>
+
+        <button>Submit</button>
+      </div>
+
+      <!-- Logo kanan -->
+      <div class="form-right">
+        <img src="images/Group 90.png" alt="Teman Selera" style="width: 250px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo tmn.png" alt="Logo" width="45">
+        <p>© 2025 Teman Selera, Inc.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <p>Home</p>
+        <p>Explore</p>
+        <p>Blog</p>
+        <p>Services</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>(+62) 852 1010 2323</p>
+        <p>temanselera@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
