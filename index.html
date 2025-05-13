@@ -69,10 +69,6 @@
     header li {
       cursor: pointer;
     }
-    header li a {
-      color: white;
-      text-decoration: none;
-    }
     header li a:hover {
       text-decoration: underline;
       opacity: 0.8;
@@ -81,7 +77,22 @@
       text-decoration: underline;
       font-weight: bold;
     }
-
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem; /* Memberikan jarak antar menu */
+      margin: 0;
+      padding: 0;
+    }
+    header li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px; /* Menambah ukuran teks untuk keterbacaan */
+    }
+    header li a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
     .hero {
       text-align: center;
       padding: 6rem 2rem;
@@ -100,11 +111,12 @@
       padding: 0.5rem;
       width: 250px;
       border: none;
-      border-radius: 4px 0 0 4px;
+      border-radius: 100px;
     }
     .search-bar button {
       padding: 0.5rem;
       border: none;
+      border-radius: 100px;
       background: #cc312e;
       cursor: pointer;
     }
@@ -248,8 +260,6 @@
       width: 40px;
       margin-bottom: 0.5rem;
     }
-
-    /* Responsive Styles */
     @media (max-width: 768px) {
       .category-list,
       .dish-list {
@@ -332,9 +342,9 @@
   <p>Mengenal Teman Selera</p>
   <div class="about-content">
     <img src="images/logo.png" alt="Logo" style="width: 300px; border-radius: 12px;">
-    <div class="mission" style="max-width: 600px; text-align: left;">
+    <div class="mission" style="max-width: 600px; text-align: left; font-family: 'Georgia';">
       <h3>Mission</h3>
-      <ol>
+      <ol> 
         <li>Membantu pengguna menemukan pengalaman kuliner terbaik melalui review jujur dan rekomendasi terpercaya.</li>
         <li>Menjadi panduan utama bagi food lovers dalam mengeksplorasi makanan enak dan restoran berkualitas.</li>
         <li>Menghubungkan pecinta kuliner dengan tempat makan terbaik melalui ulasan, rating, dan rekomendasi berbasis komunitas.</li>
@@ -448,22 +458,22 @@
   const categoryData = {
     appetizer: {
       title: "Appetizer",
-      img: "images/appetizer.jpg", // ganti dengan gambar appetizer
+      img: "images/appetizer.jpg", 
       desc: "Appetizer adalah hidangan pembuka yang ringan, biasanya disajikan sebelum hidangan utama."
     },
     maincourse: {
       title: "Main Course",
-      img: "images/maincourse.jpg", // ganti dengan gambar maincourse
+      img: "images/maincourse.jpg", 
       desc: "Main Course adalah hidangan utama dalam sebuah sajian yang mengenyangkan dan menjadi pusat perhatian."
     },
     sidedish: {
       title: "Side Dish",
-      img: "images/sidedish.jpg", // ganti dengan gambar sidedish
+      img: "images/sidedish.jpg", 
       desc: "Side Dish adalah pelengkap makanan utama, bisa berupa sayuran, kentang, atau makanan ringan lainnya."
     },
     dessert: {
       title: "Dessert",
-      img: "images/dessert.jpg", // ganti dengan gambar dessert
+      img: "images/dessert.jpg",
       desc: "Dessert adalah makanan penutup yang manis, seperti kue, es krim, atau puding."
     }
   };
