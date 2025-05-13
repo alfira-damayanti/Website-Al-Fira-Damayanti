@@ -33,6 +33,22 @@ header {
   align-items: center;
   padding: 1rem 2rem;
 }
+header ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    header li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    header li a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
 .logo {
   display: flex;
   align-items: center;
@@ -166,6 +182,7 @@ h2 {
 .trending-now li {
   font-size: 20px;
   margin: 0.5rem 0;
+  font-weight: bold;
 }
 
 .trending-now a {
@@ -185,7 +202,6 @@ h2 {
   margin-top: 1rem;
   border-radius: 10px;
 }
-
 footer {
   background: #fef9f6;
   padding: 2rem 1rem;
@@ -305,20 +321,26 @@ footer {
 </div>
   </section>
 
-  <!-- Trending Now -->
-<section class="cream-section trending-now">
-  <h2 style="text-align: center;">Trending Now</h2>
-
-  <a href="https://food.detik.com/info-kuliner/d-7716462/5-tren-makanan-yang-diprediksi-bakal-populer-tahun-2025">5 Tren Makanan yang Diprediksi Bakal Populer Tahun 2025</a>
-
-<ul>
-  <li><strong>1.</strong> Pengalaman santap canggih</li>
-  <li><strong>2.</strong> Hibachi</li>
-  <li><strong>3.</strong> Makanan manis Khas Asia</li>
-  <li><strong>4.</strong> Dessert</li>
-  <li><strong>5.</strong> Protein Nabati</li>
-</ul>
-  </section>
+<!-- Section Trending Now -->
+<section class="cream-section trending-now" style="background-color:#fef9f6; padding: 20px; border-radius: 12px; display: flex; justify-content: center;">
+  <div class="trending-container" style="background: #ffffff; padding: 20px; max-width: 800px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: #cc312e; margin-bottom: 15px;">✨ Trending Now ✨</h2>
+    <div class="trending-cards">
+      <div class="trending-card" style="margin-bottom: 15px; transition: transform 0.3s ease;">
+        <a href="https://food.detik.com/info-kuliner/d-7716462/5-tren-makanan-yang-diprediksi-bakal-populer-tahun-2025" style="font-size: 1rem; font-weight: bold; color: #cc312e; text-decoration: none; display: flex; align-items: center; background: #fef4f2; padding: 8px 12px; border-radius: 8px;">
+          <span style="font-size: 1.5rem; margin-right: 8px;"></span> 5 Tren Makanan yang Diprediksi Bakal Populer Tahun 2025
+        </a>
+        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
+          <li style="background: #fef4f2; padding: 5px 10px; border-radius: 8px; margin-bottom: 5px;"><strong>1.</strong> Pengalaman santap canggih</li>
+          <li style="background: #fef4f2; padding: 5px 10px; border-radius: 8px; margin-bottom: 5px;"><strong>2.</strong> Hibachi</li>
+          <li style="background: #fef4f2; padding: 5px 10px; border-radius: 8px; margin-bottom: 5px;"><strong>3.</strong> Makanan manis Khas Asia</li>
+          <li style="background: #fef4f2; padding: 5px 10px; border-radius: 8px; margin-bottom: 5px;"><strong>4.</strong> Dessert</li>
+          <li style="background: #fef4f2; padding: 5px 10px; border-radius: 8px;"><strong>5.</strong> Protein Nabati</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Culinary Stories -->
   <section class="red-section culinary-stories">
